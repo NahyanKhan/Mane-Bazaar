@@ -1,0 +1,16 @@
+{
+  "name": "mane-bazaar-connected-pilot",
+  "private": true,
+  "type": "module",
+  "version": "0.3.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node server.mjs --demo",
+    "test": "node --test test.mjs hosted.test.mjs voice.test.mjs",
+    "check": "node --check server.mjs && node --check domain.mjs && node --check access.mjs && node --check whatsapp.mjs && node --check public/app.js && node --check voice.mjs",
+    "start:hosted": "node server.mjs --hosted",
+    "keys": "node generate-keys.mjs"
+  }
+}

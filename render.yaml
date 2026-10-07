@@ -1,0 +1,24 @@
+# Review charges before creating this paid web service and persistent disk.
+# Upload the CONTENTS of HMB-connected to the GitHub repository root.
+services:
+  - type: web
+    name: mane-bazaar-pilot
+    runtime: docker
+    plan: 0.5c-512mb
+    healthCheckPath: /health
+    numInstances: 1
+    disk:
+      name: mane-bazaar-data
+      mountPath: /app/data
+      sizeGB: 1
+    envVars:
+      - key: PUBLIC_ORIGIN
+        sync: false
+      - key: SELLER_ACCESS_KEY_HASH
+        sync: false
+      - key: PILOT_ACCESS_KEY_HASH
+        sync: false
+      - key: RIDER_ACCESS_KEYS_JSON
+        sync: false
+      - key: WHATSAPP_SEND_ENABLED
+        value: "false"
